@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <style>
+        @font-face {
+            font-family: 'Ascender Serif WGL';
+            src: url('path-to-ascender-serif-wgl-regular.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Ascender Sans Narrow WGL';
+            src: url('path-to-ascender-sans-narrow-wgl-bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        .form-container {
+            background-color: white;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 20px;
+            width: 300px;
+        }
+        h2 {
+            color: #2781d9;
+            margin-top: 0;
+            font-family: 'Ascender Serif WGL', serif;
+            font-weight: normal;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #666;
+            font-family: Tahoma, sans-serif;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .submit-container {
+            text-align: right;
+        }
+        button {
+            background-color: white;
+            color: #2781d9;
+            border: 2px solid #2781d9;
+            padding: 3px 7px;
+            border-radius: 10px;
+            cursor: pointer;
+            font-family: 'Ascender Sans Narrow WGL', sans-serif;
+            font-weight: bold;
+        }
+        button:hover {
+            background-color: #f0f8ff;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h2>Form</h2>
+        <form id="numberForm">
+            <label for="numberInput">Number</label>
+            <input type="number" id="numberInput" placeholder="Please enter a number" min="11" step="1" required>
+            <div class="submit-container">
+                <button type="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+    <script>
+        document.getElementById('numberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const input = document.getElementById('numberInput');
+            const value = parseInt(input.value);
+            if (value <= 10) {
+                alert('Please enter a number greater than 10.');
+            } else {
+                alert('Form submitted successfully!');
+                // Here you can add code to handle the form submission
+            }
+        });
+    </script>
+</body>
+</html>
