@@ -1,1 +1,0 @@
-# Junior_Web_Developper_Exercise
